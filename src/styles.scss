@@ -1,0 +1,16 @@
+@import "scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap";
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "scss/custom";
+@import "scss/responsive";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+ @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";

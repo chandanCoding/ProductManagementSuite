@@ -1,0 +1,77 @@
+<div class="" id="page-wrapper">
+  <div class="container-fluid">
+    <div class="row row-stat">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading panel-heading-divider">Create Products<span class="panel-subtitle">Adding a product
+              to the product collection</span>
+          </div>
+          <div class="panel-body">
+            <alert *ngIf="success" type="success" dismissible="true" dismissOnTimeout="3000"
+              (onClosed)="success = false">
+              <div>
+                <span class="icon mdi mdi-check"></span><strong>Success!</strong> Product has been added.
+              </div>
+            </alert>
+            <alert *ngIf="failure" type="danger" dismissible="true" dismissOnTimeout="3000"
+              (onClosed)="failure = false">
+              <div>
+                <span class="icon mdi mdi-close-circle"></span><strong>Error!</strong> Please enter valid details.
+              </div>
+            </alert>
+            <div class="xs-mt-10 xs-mb-10  ">
+              <div class="row">
+                <div class="col-md-7">
+                  <form class="form-horizontal" [formGroup]="creationForm">
+                    <div class="form-group">
+                      <div class="row">
+                        <label class="col-sm-3 control-label" for="form-control-1">Product ID</label>
+                        <div class="col-sm-9">
+                          <input formControlName="productId" id="form-control-1" class="form-control" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <label class="col-sm-3 control-label" for="form-control-1">Product Name</label>
+                        <div class="col-sm-9">
+                          <input formControlName="productName" id="form-control-2" class="form-control" type="text">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <label class="col-sm-3 control-label" for="form-control-1">Price($)</label>
+                        <div class="col-sm-9">
+                          <input formControlName="price" id="form-control-3" class="form-control" type="number"
+                            min="0.01" step="0.01">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <label class="col-sm-3 control-label" for="form-control-1">Quantity</label>
+                        <div class="col-sm-9">
+                          <input formControlName="quantity" id="form-control-4" class="form-control" type="number">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group text-right">
+                      <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-9">
+                          <button class="btn btn-space btn-success" (click)="onSubmit()">Save</button>
+                          &nbsp; &nbsp;
+                          <button class="btn btn-space btn-danger" (click)="onReset()">Reset</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
